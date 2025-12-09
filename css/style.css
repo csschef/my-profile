@@ -1,9 +1,10 @@
 :root {
-    --bg-color: rgb(240, 238, 238);
-    --secondary-bg-color: rgb(240, 237, 237);
+    --bg-color: rgb(240, 237, 237);
+    --secondary-bg-color: rgb(244, 240, 240);
     --primary-text-color: rgb(47, 47, 47);
     --secondary-text-color: rgba(47, 47, 47, .8);
     --box-shadow-1: 0 0px 20px rgba(0, 0, 0, 0.1);
+    --box-shadow-2: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -42,20 +43,28 @@ p {
     line-height: 1.5;
 }
 
+.about-me p {
+    font-size: .9rem;
+    margin-top: 0rem;
+    color: var(--secondary-text-color);
+}
+
 
 
 .experience,
-.education {
-    margin: 0rem 0;
+.education,
+.about-me {
+    margin: 0 auto;
     padding: 1rem;
     background-color: rgba(236, 228, 228, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, .1);
+    max-width: 600px;
 }
 
 details summary {
     display: flex;
-    align-items: center;        /* vertikal centrering */
-    justify-content: space-between; /* logotyp + text till vänster, chevron längst höger */
+    align-items: center;
+    justify-content: space-between;
     gap: 0.75rem;
     cursor: pointer;
 }
@@ -63,20 +72,20 @@ details summary {
 .summary-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* vänsterjusterar texten */
+    align-items: flex-start;
     text-align: left;
-    flex: 1; /* ← gör att texten tar all tillgänglig plats mellan logotyp och chevron */
+    flex: 1;
 }
 
 .summary-text i.fa-chevron-right {
-    margin-left: auto; /* trycker den längst till höger */
+    margin-left: auto;
 }
 
 .company-logo {
-    width: 40px;    /* justera storlek */
+    width: 40px;
     height: 40px;
     object-fit: contain;
-    border-radius: 4px; /* valfritt */
+    border-radius: 50%;
 }
 
 details {
@@ -109,6 +118,7 @@ summary::-webkit-details-marker {
 summary i {
     margin-right: .5rem;
     transition: transform 0.3s;
+    color: var(--secondary-text-color);
 }
 
 
@@ -117,21 +127,29 @@ details[open] summary i {
     transform: rotate(90deg);
 }
 
+header {
+    background-color: var(--secondary-bg-color);
+    position: sticky;
+    top: 0;
+}
+
 .profile-header {
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* Hela info-blocket (bild + namn + tagline) */
+
 .profile-info {
     display: grid;
     grid-template-columns: 20% 80%;
     align-items: center;
     padding: 1rem;
+    max-width: 600px;
+    margin: auto;
 }
 
-/* Profilbild */
+
 .profile-info img {
     grid-column: 1;
     grid-row: 1;
@@ -152,7 +170,7 @@ details[open] summary i {
     justify-items: center;
 }
 
-/* Namn – vertikalt centrerat */
+
 .name {
     grid-column: 2;
     grid-row: 1;
@@ -164,7 +182,7 @@ details[open] summary i {
     font-size: 1.5rem;
 }
 
-/* Tagline under hela raden */
+
 .tagline {
     grid-column: 2;
     grid-row: 2;
@@ -178,13 +196,13 @@ details[open] summary i {
     color: var(--secondary-text-color);
 }
 
-/* Social-länkar – full width, kant till kant */
+
 .social {
     border-top: 1px solid rgba(0, 0, 0, .1);
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     padding: 1rem 0;
-    background: rgba(236, 228, 228, 0.1);
-    box-shadow: var(--box-shadow-1);
+    background: var(--secondary-bg-color);
+    box-shadow: var(--box-shadow-2);
     text-align: center;
 }
 
