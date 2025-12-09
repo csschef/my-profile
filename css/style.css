@@ -20,6 +20,13 @@ body {
     text-align: center;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 h1 {
     color: var(--primary-text-color);
     font-size: 1.5rem;
@@ -53,11 +60,12 @@ p {
 
 .experience,
 .education,
-.about-me {
-    margin: 0 auto;
+.about-me,
+.projects {
+    margin: 1rem auto;
     padding: 1rem;
-    background-color: rgba(236, 228, 228, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background-color: rgba(167, 167, 167, 0.05);
+    border: 1px solid rgba(0, 0, 0, .1);
     max-width: 600px;
 }
 
@@ -213,10 +221,40 @@ header {
     font-size: 1rem;
 }
 
-.social a:hoover {
-    font-weight: 700;
-    color: red;
+.social a:hover {
+    font-weight: 600;
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+    margin: auto;
+    align-items: stretch;
+}
 
+.project-item {
+    background-color: var(--secondary-bg-color);
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: var(--box-shadow-1);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
 
+.project-item-description {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    margin-top: 0;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.projects a {
+    text-decoration: none;
+}
