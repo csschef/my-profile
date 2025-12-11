@@ -1,11 +1,15 @@
 :root {
     --bg-color: rgb(230, 227, 227);
     --secondary-bg-color: rgb(244, 240, 240);
-    --primary-text-color: rgb(47, 47, 47);
-    --secondary-text-color: rgba(47, 47, 47, .8);
+    --primary-text-color: rgb(67, 67, 67);
+    --secondary-text-color: rgba(67, 67, 67, .8);
     --box-shadow-1: 0 0px 8px rgba(0, 0, 0, 0.1);
     --box-shadow-2: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --btn-color: rgb(230, 227, 227);
+    --btn-color: rgb(67, 67, 67);
+    --btn-text-color: rgb(244, 240, 240);
+    --connection-line-color: rgb(220, 220, 220);
+    --connection-dot-color: rgb(160, 160, 160);
+    --icon-color: rgb(67, 67, 67);
 }
 
 
@@ -43,11 +47,7 @@ h2 {
     font-weight: 500;
 }
 
-.h2-decoration {
-    padding: .5rem;
-    width: fit-content;
-    display: inline-block;
-}
+
 
 strong {
     font-weight: 500;
@@ -65,6 +65,7 @@ p {
     font-size: clamp(0.9rem, 0.8714285714285714rem + 0.1428571428571429vw, 1.1rem);
     margin-top: 0rem;
     color: var(--secondary-text-color);
+    text-align: left;
 }
 
 
@@ -78,6 +79,17 @@ p {
     background-color: var(--secondary-bg-color);
     border: 1px solid rgba(0, 0, 0, .1);
     max-width: 800px;
+}
+
+.h2-position {
+    width: fit-content;
+    margin: 1rem 0 1.6rem 0;
+}
+
+.icon {
+    margin-right: .5rem;
+    color: var(--icon-color);
+    font-size: 1rem;
 }
 
 details summary {
@@ -146,6 +158,49 @@ summary i {
 
 details[open] summary i {
     transform: rotate(90deg);
+}
+
+.company-group {
+    position: relative;
+    padding-left: 1.2rem; /* avstånd till linjen */
+}
+
+.company-group::before {
+    content: "";
+    position: absolute;
+    left: 3px;     /* Justera så linjen hamnar rakt */
+    top: 70px;        /* startpunkt under övre cirkeln */
+    bottom: 70px;     /* slutpunkt över nedre cirkeln */
+    width: 2px;
+    background: var(--connection-line-color);
+}
+
+/* Övre cirkeln */
+.company-group::after {
+    content: "";
+    position: absolute;
+    left: 0;       /* centrerar cirkeln över linjen */
+    top: 50px;           /* placering av cirkeln */
+    width: 8px;
+    height: 8px;
+    background: var(--connection-dot-color);
+    border-radius: 50%;
+}
+
+/* Nedre cirkeln – separat element */
+.company-group .circle-bottom {
+    content: "";
+    position: absolute;
+    left: 0;       /* centrerar cirkeln över linjen */
+    bottom: 50px;
+    width: 8px;
+    height: 8px;
+    background: var(--connection-dot-color);
+    border-radius: 50%;
+}
+
+.company-group details {
+    margin-bottom: 20px;
 }
 
 header {
@@ -274,15 +329,15 @@ header {
 .project-button {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-text-color);
+    color: var(--btn-text-color);
     background-color: var(--btn-color);
     font-size: 0.8rem;
     font-size: clamp(0.8rem, 0.7571428571428572rem + 0.2142857142857143vw, 1.1rem);
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    padding: .5rem 1rem;
-    border: 1px solid rgba(0, 0, 0, .1);
+    padding: .8rem 1rem;
+    border-radius: 6px;;
     box-shadow: var(--box-shadow-1);
     cursor: pointer;
     transition: transform 0.3s;
