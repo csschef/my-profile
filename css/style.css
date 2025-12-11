@@ -3,14 +3,34 @@
     --secondary-bg-color: rgb(244, 240, 240);
     --primary-text-color: rgb(67, 67, 67);
     --secondary-text-color: rgba(67, 67, 67, .8);
-    --box-shadow-1: 0 0px 8px rgba(0, 0, 0, 0.1);
-    --box-shadow-2: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-1: var(--shadow-elevation-medium);
+    --box-shadow-2: var(--shadow-elevation-medium);
     --btn-color: rgb(67, 67, 67);
     --btn-text-color: rgb(244, 240, 240);
     --connection-line-color: rgb(220, 220, 220);
     --connection-dot-color: rgb(160, 160, 160);
     --icon-color: rgb(67, 67, 67);
-}
+    --shadow-color: 0deg 2% 56%;
+    --shadow-color: 0deg 2% 59%;
+    --shadow-elevation-low:
+        0px 0.3px 0.3px hsl(var(--shadow-color) / 0.31),
+        0px 0.5px 0.6px -1.2px hsl(var(--shadow-color) / 0.31),
+        -0.1px 1.3px 1.5px -2.5px hsl(var(--shadow-color) / 0.31);
+    --shadow-elevation-medium:
+        0px 0.3px 0.3px hsl(var(--shadow-color) / 0.33),
+        -0.1px 1px 1.1px -0.8px hsl(var(--shadow-color) / 0.33),
+        -0.1px 2.6px 2.9px -1.7px hsl(var(--shadow-color) / 0.33),
+        -0.3px 6.3px 7.1px -2.5px hsl(var(--shadow-color) / 0.33);
+    --shadow-elevation-high:
+        0px 0.2px 0.2px hsl(var(--shadow-color) / 0.3),
+        0px 1px 1.1px -0.4px hsl(var(--shadow-color) / 0.3),
+        0px 1.8px 2px -0.7px hsl(var(--shadow-color) / 0.3),
+        0px 2.9px 3.3px -1.1px hsl(var(--shadow-color) / 0.3),
+        0px 4.7px 5.3px -1.4px hsl(var(--shadow-color) / 0.3),
+        0px 7.3px 8.2px -1.8px hsl(var(--shadow-color) / 0.3),
+        0px 11px 12.4px -2.1px hsl(var(--shadow-color) / 0.3),
+        0px 16.2px 18.2px -2.5px hsl(var(--shadow-color) / 0.3);
+    }
 
 
 html {
@@ -79,6 +99,7 @@ p {
     background-color: var(--secondary-bg-color);
     border: 1px solid rgba(0, 0, 0, .1);
     max-width: 800px;
+    box-shadow: var(--box-shadow-1);
 }
 
 .h2-position {
@@ -208,6 +229,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 9999;
+    margin-bottom: 2rem;
 }
 
 .profile-header {
@@ -219,7 +241,7 @@ header {
 
 .profile-info {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 22% 78%;
     align-items: center;
     padding: 1rem;
     max-width: 600px;
@@ -231,10 +253,11 @@ header {
     grid-column: 1;
     grid-row: 1;
     width: 100%;
-    max-width: 120px;
+    max-width: 140px;
     height: auto;
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .name-wrapper {
@@ -279,7 +302,7 @@ header {
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     padding: 1rem 0;
     background: var(--secondary-bg-color);
-    box-shadow: var(--box-shadow-2);
+    box-shadow: var(--shadow-elevation-high);
     text-align: center;
 }
 
