@@ -5,6 +5,7 @@
     --secondary-text-color: rgba(47, 47, 47, .8);
     --box-shadow-1: 0 0px 8px rgba(0, 0, 0, 0.1);
     --box-shadow-2: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --btn-color: rgb(230, 227, 227);
 }
 
 
@@ -274,7 +275,7 @@ header {
     display: inline-block;
     text-decoration: none;
     color: var(--primary-text-color);
-    background-color: var(--bg-color);
+    background-color: var(--btn-color);
     font-size: 0.8rem;
     font-size: clamp(0.8rem, 0.7571428571428572rem + 0.2142857142857143vw, 1.1rem);
     margin-left: auto;
