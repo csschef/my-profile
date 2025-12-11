@@ -9,9 +9,8 @@
     --btn-text-color: rgb(244, 240, 240);
     --connection-line-color: rgb(220, 220, 220);
     --connection-dot-color: rgb(160, 160, 160);
-    --icon-color: rgb(67, 67, 67);
+    --icon-color: #434343;
     --shadow-color: 0deg 2% 56%;
-    --shadow-color: 0deg 2% 59%;
     --shadow-elevation-low:
         0px 0.3px 0.3px hsl(var(--shadow-color) / 0.31),
         0px 0.5px 0.6px -1.2px hsl(var(--shadow-color) / 0.31),
