@@ -3,13 +3,15 @@
     --secondary-bg-color: rgb(244, 240, 240);
     --primary-text-color: rgb(67, 67, 67);
     --secondary-text-color: rgba(67, 67, 67, .8);
+    --accent-color: #C05621;
+    --accent-color-hover: #9C4221;
     --box-shadow-1: var(--shadow-elevation-medium);
     --box-shadow-2: var(--shadow-elevation-medium);
-    --btn-color: rgb(67, 67, 67);
+    --btn-color: var(--accent-color);
     --btn-text-color: rgb(244, 240, 240);
     --connection-line-color: rgb(220, 220, 220);
     --connection-dot-color: rgb(160, 160, 160);
-    --icon-color: #434343;
+    --icon-color: var(--primary-text-color);
     --shadow-color: 0deg 2% 56%;
     --shadow-elevation-low:
         0px 0.3px 0.3px hsl(var(--shadow-color) / 0.31),
@@ -42,6 +44,11 @@ body {
     text-align: center;
     font-family: "Inter", sans-serif;
     letter-spacing: -.5px;
+}
+
+::selection {
+    background-color: var(--accent-color);
+    color: var(--btn-text-color);
 }
 
 img {
@@ -309,10 +316,20 @@ header {
     text-decoration: none;
     font-size: 0.9rem;
     font-size: clamp(0.9rem, 0.8714285714285714rem + 0.1428571428571429vw, 1.1rem);
+    transition: color 0.3s ease;
 }
 
 .social a:hover {
-    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.social a i {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.social a:hover i {
+  transform: scale(1.15) rotate(-3deg);
+  color: var(--accent-color);
 }
 
 .projects-grid {
@@ -344,6 +361,7 @@ header {
 
 .project-button:hover {
     transform: translateY(-2px);
+    background-color: var(--accent-color-hover);
 }
 
 .project-button {
